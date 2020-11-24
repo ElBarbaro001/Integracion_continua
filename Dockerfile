@@ -6,7 +6,7 @@ FROM node:9.4.0-alpine as client
 WORKDIR /usr/app/client/
 #Copiar archivos json al nuevo destino
 COPY client/package*.json ./
-#ejecutar paquete con gestor npm
+#ejecutar paquete con gestor npms
 RUN npm install -qy
 #Copiar configuracion al destino
 COPY client/ ./
