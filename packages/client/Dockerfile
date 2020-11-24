@@ -16,4 +16,5 @@ COPY . .
 #Publicar el sitio por el puerto 3000 localhost:3000
 EXPOSE 3000
 
-
+#compilar
+CMD ["npm", "start"]
