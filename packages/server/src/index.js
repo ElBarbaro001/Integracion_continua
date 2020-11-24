@@ -19,7 +19,7 @@ app.use(express.static(CLIENT_BUILD_PATH));
 app.get('/api', (req, res) => {
   res.set('Content-Type', 'application/json');
   let data = {
-    message: 'Proyecto INTEGRACION CONTINUA'
+    message: 'Proyecto INTEGRACION CONTINUA GIT + Docker + Jenkins'
   };
   res.send(JSON.stringify(data, null, 2));
 });
