@@ -2,10 +2,10 @@ version: '2'
 services:
   server:
     build:
-      context: ./server/
+      context: ./packages/server/
     command: /usr/app/node_modules/.bin/nodemon src/index.js
     volumes:
-      - ./server/:/usr/app
+      - ./package/server/:/usr/app
       - /usr/app/node_modules
     ports:
       - "8080:8080"
@@ -15,10 +15,10 @@ services:
       - CHOKIDAR_USEPOLLING=true
   client:
     build:
-      context: ./client/
+      context: ./packages/client/
     command: npm start
     volumes:
-      - ./client/:/usr/app
+      - ./package/client/:/usr/app
       - /usr/app/node_modules
     depends_on:
       - server
