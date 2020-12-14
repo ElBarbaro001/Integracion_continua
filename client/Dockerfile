@@ -8,7 +8,7 @@ WORKDIR /usr/app
 COPY package*.json ./
 
 
-RUN npm ci -qy
+RUN npm install -qy
 
 #copiar todos los archivos
 COPY . .

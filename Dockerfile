@@ -30,7 +30,7 @@ RUN npm install -qy
 #Copiar configuracion al destino
 COPY server/ ./
 
-ENV PORT 8000
+ENV PORT 8090
 
 EXPOSE 8000
 

@@ -2,23 +2,23 @@ version: '2'
 services:
   server:
     build:
-      context: ./packages/server/
+      context: ./server/
     command: /usr/app/node_modules/.bin/nodemon src/index.js
     volumes:
-      - ./package/server/:/usr/app
+      - ./server/:/usr/app
       - /usr/app/node_modules
     ports:
-      - "8080:8080"
-      
+      - "8090:8090"
+    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
   client:
     build:
-      context: ./packages/client/
+      context: ./client/
     command: npm start
     volumes:
-      - ./package/client/:/usr/app
+      - ./client/:/usr/app
       - /usr/app/node_modules
     depends_on:
       - server
