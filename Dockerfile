@@ -1,5 +1,5 @@
 
-# Montar servidor Nodejs xx
+# Montar servidor Nodejs xxx
 
 FROM node:9.4.0-alpine as client
 #Crear espacio de trabajo
