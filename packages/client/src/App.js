@@ -14,12 +14,12 @@ import {
 } from "reactstrap";
 
 const data = [
-  { id: 1, pais: "España", equipo: "Atletico de Madrid" },
-  { id: 2, pais: "Alemania", equipo: "Borussia Dortmund" },
-  { id: 3, pais: "Italia", equipo: "Napoli" },
-  { id: 4, pais: "Portugal", equipo: "Porto" },
-  { id: 5, pais: "Francia", equipo: "Monaco"},
-  { id: 6, pais: "Inglaterra", equipo: "Aston Villa" },
+  { id: 1, pais: "España", equipo_Futbol: "Atletico de Madrid" },
+  { id: 2, pais: "Alemania", equipo_Futbol: "Borussia Dortmund" },
+  { id: 3, pais: "Italia", equipo_Futbol: "Napoli" },
+  { id: 4, pais: "Portugal", equipo_Futbol: "Porto" },
+  { id: 5, pais: "Francia", equipo_Futbol: "Monaco"},
+  { id: 6, pais: "Inglaterra", equipo_Futbol: "Aston Villa" },
 ];
 
 class App extends React.Component {
@@ -30,7 +30,7 @@ class App extends React.Component {
     form: {
       id: "",
       pais: "",
-      equipo: "",
+      equipo_Futbol: "",
     },
   };
 
@@ -61,7 +61,7 @@ class App extends React.Component {
     arreglo.map((registro) => {
       if (dato.id == registro.id) {
         arreglo[contador].pais = dato.pais;
-        arreglo[contador].equipo = dato.equipo;
+        arreglo[contador].equipo_Futbol = dato.equipo;
       }
       contador++;
     });
@@ -76,10 +76,7 @@ class App extends React.Component {
       arreglo.map((registro) => {
         if (dato.id == registro.id) {
           arreglo.splice(contador, 1);
-        }
-        contador++;
-      });
-      this.setState({ data: arreglo, modalActualizar: false });
+        }equipo_Futbol
     }
   };
 
@@ -124,7 +121,7 @@ class App extends React.Component {
                 <tr key={dato.id}>
                   <td>{dato.id}</td>
                   <td>{dato.pais}</td>
-                  <td>{dato.equipo}</td>
+                  <td>{dato.equipo_Futbol}</td>
                   <td>
                     <Button
                       color="primary"
@@ -145,7 +142,7 @@ class App extends React.Component {
            <div><h3>Editar Registro</h3></div>
           </ModalHeader>
 
-          <ModalBody>
+          <ModalBody>equipo
             <FormGroup>
               <label>
                Id:
@@ -181,7 +178,7 @@ class App extends React.Component {
                 name="equipo"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.equipo}
+                value={this.state.form.equipo_Futbol}
               />
             </FormGroup>
           </ModalBody>
